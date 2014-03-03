@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style>
+	.wrap{padding:20px;width:200px;border:#CCC;}
+</style>
+
+</head>
+
+<body>
+
+    <div class="wrap" id="wrap">
+    	<input id="mi-val" type="text" value="10" />
+        <input id="ma-val" type="text" value="100" />
+        <button id="g-btn">get</button>
+    </div>
+    <div id="m-text" style="border:#F00 solid 1px;width:50px;height:30px;">1</div>
+    
+<script type="text/javascript">
+
+	function gdn(mi,ma){
+		var rag=ma-mi;
+		var ran=Math.random();
+		var num=parseInt(mi) + Math.round(ran*rag);	
+	    return(num);
+	}
+	var	gBtn=document.getElementById("g-btn");
+	gBtn.addEventListener("click",function(){
+		var miVal=document.getElementById("mi-val").value,
+			maVal=document.getElementById("ma-val").value;
+		var con=gdn(miVal,maVal);
+		document.getElementById("m-text").innerHTML=con;
+
+	});	
+
+</script>
+</body>
+</html>
